@@ -214,6 +214,7 @@
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\jquery-1.10.2.js" />
     <Content Include="Content\js\jquery-1.10.2.min.js" />
+    <Content Include="Content\topojson\fabricTopology-test.json" />
     <None Include="Views\Hmi\fabricEditor.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -249,7 +250,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\themes\" />
-    <Folder Include="Content\topojson\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
