@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "HmiView";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="~/Content/css/easyui.css" />
+</head>
+<body class="easyui-layout">
+    <div  data-options="region:'center'">
+        <canvas id="mainCanvas2" style="width:100%;height:100%" />
+    </div>
+    <script type="text/javascript" src="~/Content/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Content/js/fabric.js"></script>
+    <script type="text/javascript" src="~/Content/js/fabric.require.js"></script>
+    <script type="text/javascript" src="~/Content/js/fabricEditor.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.easyui.min.js"></script>
+    <script>
+        var hmiView;
+        var topoName = '@(ViewData["topoName"])';
+
+        $(document).ready(function () {
+
+            hmiView = new HmiViwer('mainCanvas2');
+            hmiView.init();
+            hmiView.zoom(1.3);
+            hmiView.load(topoName);
+        });
+
+        var updateStatus = function (tag, value) {
+            var objs = hmiView.canvas.getObjects();
+            for (i = 0; i < objs.length; i++) {
+                var obj = objs[i];
+                if (obj.tag == tag) {
+                    if (obj.type == "text") {
+                        obj.text = value.toString();
+                    }
+                    else if (obj.type == "image") {
+                        obj.setSrc("/content/images/water/" + obj.tagOnImg + value + ".png");
+                    }
+                    else if (obj.type == "rect") {
+                        if (value == 1) {
+                            obj.set('fill', 'red');
+                        }
+                        else {
+                            obj.set('fill', 'green');
+                        }
+                    }
+                }
+            }
+            hmiView.canvas.requestRenderAll();
+        }
+        var count = 0;
+        window.setInterval(function () {
+            updateStatus("Station1.Mov.B3.sta", count++ % 2);
+            updateStatus("Station1.Mov.B3.flt", count++ % 2);
+            updateStatus("station1.level.percent.val", count);
+
+            editor.canvas.renderAll();
+            count++;
+        }, 1000);
+    </script>
+</body>
+</html>

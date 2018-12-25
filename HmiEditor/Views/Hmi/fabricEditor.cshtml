@@ -1,0 +1,539 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/Content/themes/bootstrap/easyui.css" />
+    <link rel="stylesheet" href="~/Content/themes/icon.css" />
+    <link rel="stylesheet" href="~/Content/css/easyui.css" />
+    <link href="http://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+    <STYLE>
+        .tp_table td {
+            padding: 10px 0;
+        }
+
+        v\:* {
+            behavior: url(#default#VML);
+        }
+        .nodeStyle {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+        }
+    </STYLE>
+</head>
+<body class="easyui-layout bodySelectNone" style="height:100%">
+        <div id="leftContent" region="west" title="图形选择" split="true" class="panel panel-default col-md-2 leftContent" >
+            <!--<div class="panel-heading">图形选择</div>-->
+            <div class="easyui-accordion overflowHidden" fit="true">
+                <div title="基本图形" class="flowImag" style="background-color:#FFFFFF;overflow:auto">
+                    <table class="tp_table" width="100%">
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Text" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/baseicon/a.jpg" class="nodeStyle" />
+                                    <br><span>文字</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Graphic" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/baseicon/baseMode1.png" class="nodeStyle" />
+                                    <br><span>长方形</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Graphic" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/baseicon/baseMode2.png" class="nodeStyle" />
+                                    <br><span>圆形</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Graphic" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/baseicon/baseMode5.png" class="nodeStyle" />
+                                    <br><span>三角形</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--<tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Graphic" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/baseicon/baseMode5.png" class="nodeStyle" />
+                                    <br><span>椭圆形</span>
+                                </div>
+                            </td>
+                        </tr>-->
+                    </table>
+                </div>
+                <div title="设备" class="flowImag" style="background-color:#FFFFFF;overflow:auto">
+                    <table class="tp_table" width="100%">
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/movGreen.png" class="nodeStyle" />
+                                    <br><span>电动球阀</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/movLeftGreen.png" class="nodeStyle" />
+                                    <br><span>电动球阀2</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/pumpLeft.png" class="nodeStyle" />
+                                    <br><span>泵1</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/pumpRight.png" class="nodeStyle" />
+                                    <br><span>泵2</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/samplePump.png" class="nodeStyle" />
+                                    <br><span>泵3</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/pool.png" class="nodeStyle" />
+                                    <br><span>沉淀池</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/pureDev.png" class="nodeStyle" />
+                                    <br><span>纯水设备</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/pureBox.png" class="nodeStyle" />
+                                    <br><span>纯水箱</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/qualityControl.png" class="nodeStyle" />
+                                    <br><span>质控</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/bps.png" class="nodeStyle" />
+                                    <br><span>废液处理系统</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/panel.png" class="nodeStyle" />
+                                    <br><span>化学需氧量等面板</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/device2.png" class="nodeStyle" />
+                                    <br><span>仪器2</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/Water/5pTestPool.png" class="nodeStyle" />
+                                    <br><span>5参池</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div title="管道" class="flowImag" style="background-color:#FFFFFF;overflow:auto">
+                    <table class="tp_table" width="100%">
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/pipH.png" class="nodeStyle" />
+                                    <br><span>管道横</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/pipV.png" class="nodeStyle" />
+                                    <br><span>管道竖</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/connectTopLeft.png" class="nodeStyle" />
+                                    <br><span>二通1</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/connectTopRight.png" class="nodeStyle" />
+                                    <br><span>二通2</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/connectButtomLeft.png" class="nodeStyle" />
+                                    <br><span>二通3</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/connectButtonRight.png" class="nodeStyle" />
+                                    <br><span>二通4</span>
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/connect3Left.png" class="nodeStyle" />
+                                    <br><span>三通1</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/connect3Right.png" class="nodeStyle" />
+                                    <br><span>三通2</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/connect3Buttom.png" class="nodeStyle" />
+                                    <br><span>三通3</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/connect3Top.png" class="nodeStyle" />
+                                    <br><span>三通4</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div  divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/connect4.png" class="nodeStyle" />
+                                    <br><span>四通</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div title="指示灯" class="flowImag" style="background-color:#FFFFFF;overflow:auto">
+                    <table class="tp_table" width="100%">
+                        <tr>
+                            <td width="100%" align="center">
+                                <div divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/btnGreen.png" class="nodeStyle" />
+                                    <br><span>绿灯</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" align="center">
+                                <div divType="mode" datatype="Image" draggable="true">
+                                    <div class="title">&nbsp;</div>
+                                    <img name="backGroundImg" src="~/content/images/water/btnRed.png" class="nodeStyle" />
+                                    <br><span>红灯</span>
+                                </div>
+                            </td>
+                        </tr>
+                       
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div region="center" class="panel panel-default col-md-8" style="margin:0px">
+           <div class="panel-heading">
+               <div class="btn-group" role="group">
+                   <!--<button type="button" class="btn btn-default glyphicon glyphicon-plus"></button>-->
+                   <button type="button" title="保存" onclick="editor.utils.save()" class="btn btn-default glyphicon glyphicon-floppy-disk"></button>
+                   <button type="button" title="刪除" onclick="editor.utils.remove()" class="btn btn-default glyphicon glyphicon-trash"></button>
+                   <button type="button" title="放大" onclick="editor.utils.zoomin()" class="btn btn-default glyphicon glyphicon-zoom-in"></button>
+                   <button type="button" title="縮小" onclick="editor.utils.zoomout()" class="btn btn-default glyphicon glyphicon-zoom-out"></button>
+                   <button type="button" title="复制" onclick="editor.utils.copy()" class="btn btn-default glyphicon glyphicon-copy"></button>
+                   <button type="button" title="粘贴" onclick="editor.utils.paste()" class="btn btn-default glyphicon glyphicon-paste"></button>
+               </div>
+               <div class="btn-group" role="group">
+                   <button type="button" title="组合" onclick="editor.utils.group()" class="btn btn-default glyphicon glyphicon-th-large"></button>
+                   <button type="button" title="取消组合" onclick="editor.utils.ungroup()" class="btn btn-default glyphicon glyphicon-th"></button>
+                   <button type="button" title="置顶" onclick="editor.utils.bringToFront()" class="btn btn-default glyphicon glyphicon-arrow-up"></button>
+                   <button type="button" title="置底" onclick="editor.utils.sendToBack()" class="btn btn-default glyphicon glyphicon-arrow-down"></button>
+                   <button type="button" title="上一层" onclick="editor.utils.bringForward()" class="btn btn-default glyphicon glyphicon-circle-arrow-up"></button>
+                   <button type="button" title="下一层" onclick="editor.utils.sendBackwards()" class="btn btn-default glyphicon glyphicon-circle-arrow-down"></button>
+                   <button type="button" title="左对齐" onclick="editor.utils.alinLeft()" class="btn btn-default glyphicon glyphicon-object-align-left"></button>
+                   <button type="button" title="上对齐" onclick="editor.utils.alinTop()" class="btn btn-default glyphicon glyphicon-object-align-top"></button>
+               </div>
+               <div class="btn-group" role="group">
+                   <button type="button" title="锁定" class="btn btn-default glyphicon glyphicon-lock" onclick="editor.utils.lock()"></button>
+                   <button type="button" title="解除锁定" class="btn btn-default glyphicon glyphicon-move" onclick="editor.utils.unlock()"></button>  
+                   <button type="button" title="预览" class="btn btn-default glyphicon glyphicon-eye-open" onclick="perview()"></button>  
+               </div>
+            </div>
+           <div class="panel-body">
+               <div class="row">
+                  <canvas id="editorCanvas" style="width:auto;height:900px" />
+               </div>
+        </div>
+    </div>
+        <div region="east" title="操作区" split="true" class="panel panel-default col-md-2">
+            <div  title="操作区" style="margin-left:4px">
+                <form class="form-horizontal">
+                    <div class="class-group">
+                        <h4>属性</h4>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">文本</label>
+                            <div class="input-group input-group-sm col-sm-7">
+                                <input class="form-control" id="nodeText" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">字体</label>
+                            <div class="input-group input-group-sm col-sm-7">
+                                <input class="form-control" id="nodeFont" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">大小</label>
+                            <div class="input-group input-group-sm col-sm-7">
+                                <input class="form-control" id="nodeFontSize" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">颜色</label>
+                            <div id="cp2" class="input-group colorpicker-component col-sm-7">
+                                <input value="#00AABB" class="form-control " id="nodeColor" />
+                                <span class="input-group-addon"><i></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">填充</label>
+                            <div id="cp2" class="input-group colorpicker-component col-sm-7">
+                                <input value="#00AABB" class="form-control " id="nodeFill" />
+                                <span class="input-group-addon"><i></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">旋转</label>
+                            <div class="input-group input-group-sm col-sm-7">
+                                <input class="form-control" id="nodeRotate" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">X</label>
+                            <div class="input-group input-group-sm col-sm-7">
+                                <input class="form-control" id="nodeX" />
+                            </div>
+                        </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Y</label>
+                                <div class="input-group input-group-sm col-sm-7">
+                                    <input class="form-control" id="nodeY" />
+                                </div>
+                            </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">ScaleX</label>
+                            <div class="input-group input-group-sm col-sm-7">
+                                <input class="form-control" id="nodeScalX" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">ScaleY</label>
+                            <div class="input-group input-group-sm col-sm-7">
+                                <input class="form-control" id="nodeScalY" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="class-group">
+                        <H4>标签</H4>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">标签</label>
+                            <div class="input-group input-group-sm col-sm-7 color">
+                                <input class="form-control" id="nodeTag" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">图像</label>
+                            <div class="input-group input-group-sm col-sm-7 color">
+                                <input class="form-control" id="nodeTagOnImg" />
+                            </div>
+                        </div>
+                    </div>
+                    <input id="save" class="btn col-sm-4 right" value="更新" style="background:#4c9ed9;color:white" />
+                </form>
+            </div>
+        </div>
+
+    <script type="text/javascript" src="~/Content/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Content/js/fabric.js"></script>
+    <script type="text/javascript" src="~/Content/js/fabric.require.js"></script>
+    <script type="text/javascript" src="~/Content/js/fabricEditor.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.easyui.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //设置图形名称
+            topoName = '@(ViewData["topoName"])';
+            //默认图形
+            if (!topoName) {
+                topoName = 'test';
+            }
+            //通过图形名称加载图形
+            editor.utils.load();
+
+            var modes = $("[divType='mode']");
+            var modeLength = modes.length;
+
+            for (var i = 0; i < modeLength; i++) {
+                modes[i].gtype = modes[i].getAttribute("gtype");
+                modes[i].datatype = modes[i].getAttribute("datatype");
+                var text = $(modes[i]).find("span").eq(0).text();
+                editor.prototype.drag(modes[i], document.getElementsByClassName("upper-canvas")[0], text);
+            }
+        });
+
+
+        $('#save').click(function () {
+            editor.prototype.currentObject.text = $("#nodeText").val();
+            editor.prototype.currentObject.tag = $("#nodeTag").val();
+            editor.prototype.currentObject.tagOnImg = $("#nodeTagOnImg").val();
+            editor.prototype.currentObject.set('fontSize', $("#nodeFontSize").val());
+            editor.prototype.currentObject.set('fontfamily',$("#nodeFont").val());
+            editor.prototype.currentObject.set('fontColor', $("#nodeColor").val());
+            editor.prototype.currentObject.set('fill', $("#nodeFill").val());
+            editor.prototype.currentObject.set('angle', $("#nodeRotate").val());
+            editor.prototype.currentObject.set('scaleX', $("#nodeScalX").val());
+            editor.prototype.currentObject.set('scaleY', $("#nodeScalY").val());
+            //editor.prototype.currentObject.set('left', $("#nodeX").val());
+            //editor.prototype.currentObject.set('top', $("#nodeY").val());
+            editor.canvas.renderAll();
+        })
+
+        var updateStatus = function (tag, value) {
+            var objs = editor.canvas.getObjects();
+            for (i = 0; i < objs.length; i++) {
+                var obj = objs[i];
+                if (obj.tag == tag) {
+                    if (obj.type == "text") {
+                        obj.text = value.toString();
+                    }
+                    else if (obj.type == "image") {
+                        //设置图片为tagOnImg+值.png
+                        obj.setSrc("/content/images/water/" + obj.tagOnImg + value + ".png");
+                    }
+                    else if (obj.type == "rect") {
+                        if (value == 1) {
+                            obj.set('fill', 'red');
+                        }
+                        else {
+                            obj.set('fill', 'green');
+                        }
+                    }
+                }
+            }
+            editor.canvas.requestRenderAll();
+        };
+
+        var count = 0;
+        //定时刷新
+        window.setInterval(function () {
+            updateStatus("Station1.Mov.B3.sta", count++ % 2);
+            updateStatus("Station1.Mov.B3.flt", count++ % 2);
+            updateStatus("station1.level.percent.val", count);
+           
+            editor.canvas.renderAll();
+            count++;
+        }, 1000);
+
+        var perview = function () {
+            window.open("/Hmi/HmiView?topoName=" + topoName);
+        }
+    </script>
+</body>
+</html>
